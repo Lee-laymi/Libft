@@ -6,11 +6,17 @@
 /*   By: skrairab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 23:38:19 by skrairab          #+#    #+#             */
-/*   Updated: 2022/02/16 23:40:10 by skrairab         ###   ########.fr       */
+/*   Updated: 2022/02/25 01:58:38 by skrairab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower (int c)
+#include "libft.h"
+
+int	ft_tolower(int c)
 {
-	return (c >= 97 && c <= 122);
+	if (c >= 'A' && c <= 'Z')
+	{
+		c == c + 32;
+	}
+	return (0);
 }
