@@ -5,14 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: skrairab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/16 22:47:41 by skrairab          #+#    #+#             */
-/*   Updated: 2022/02/16 22:50:44 by skrairab         ###   ########.fr       */
+/*   Created: 2022/02/25 01:49:04 by skrairab          #+#    #+#             */
+/*   Updated: 2022/02/25 01:49:18 by skrairab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd>
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {
-	return (c >= 48 && c <= 57)
+	if (c >= 48 && c <= 57)
+		return (1);
+	return (0);
 }
