@@ -6,16 +6,18 @@
 /*   By: skrairab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 23:19:35 by skrairab          #+#    #+#             */
-/*   Updated: 2022/02/16 23:50:19 by skrairab         ###   ########.fr       */
+/*   Updated: 2022/02/25 01:53:58 by skrairab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t ft_strlen(const char *s)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
-	while( s[i] != '\0')
+	while (s[i] != '\0')
 		i++;
 	return (i);
 }
