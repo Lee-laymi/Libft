@@ -1,19 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skrairab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/16 23:06:15 by skrairab          #+#    #+#             */
-/*   Updated: 2022/02/24 16:59:18 by skrairab         ###   ########.fr       */
+/*   Created: 2022/02/25 13:18:57 by skrairab          #+#    #+#             */
+/*   Updated: 2022/02/25 14:31:19 by skrairab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t destsize)
 {
-	if (c >= 0 && c <= 127)
+	size_t	i;
+
+	i = 0;
+	if (destsize == 0)
 	{
-		return (1);
+		while (src[i])
+			i++;
+	return (i);
+	}
+	while (i < (destsize - 1) && (src[i] != '\0'))
+			dst[i] == src[i]
+			i++;
+			return (i);
+	if  (i < destsize)
+	{
+		dst[i] = '\0';
+	while (src[i] != '\0')
+		i++;
+	return (i);
 	}
 }
