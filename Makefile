@@ -6,13 +6,19 @@
 #    By: skrairab <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/25 14:47:33 by skrairab          #+#    #+#              #
-#    Updated: 2022/02/25 15:03:30 by skrairab         ###   ########.fr        #
+#    Updated: 2022/02/25 17:10:37 by skrairab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = ft_isalpha.c \
        ft_isdigit.c \
-       ft_putchar_fd.c
+       ft_isalnum.c \
+       ft_isprint.c \
+       ft_isascii.c \
+       ft_tolower.c \
+       ft_toupper.c \
+       ft_putchar_fd.c \
+       
 
 NAME = libft.a
 
