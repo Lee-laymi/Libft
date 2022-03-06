@@ -6,7 +6,7 @@
 #    By: skrairab <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/25 14:47:33 by skrairab          #+#    #+#              #
-#    Updated: 2022/02/25 17:10:37 by skrairab         ###   ########.fr        #
+#    Updated: 2022/03/06 11:52:22 by skrairab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,11 @@ SRCS = ft_isalpha.c \
        ft_tolower.c \
        ft_toupper.c \
        ft_putchar_fd.c \
-       
+       ft_strlcpy.c \
+       ft_strlen.c \
+       ft_atoi.c \
 
+       
 NAME = libft.a
 
 OBJS = $(SRCS:.c=.o)

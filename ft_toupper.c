@@ -6,16 +6,18 @@
 /*   By: skrairab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 23:37:10 by skrairab          #+#    #+#             */
-/*   Updated: 2022/02/24 18:11:02 by skrairab         ###   ########.fr       */
+/*   Updated: 2022/03/05 14:37:36 by skrairab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_toupper(int c)
 {
-	if (c >= 'a' && c <= 'z')
+	if (ft_isalpha(c))
 	{
-		c == c - 32 ;
-		return (1);
+		if (c >= 'a')
+			return (c - ('a' - 'A'));
 	}
-	return (0);
+	return (c);
 }

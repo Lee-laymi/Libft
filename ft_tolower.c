@@ -6,7 +6,7 @@
 /*   By: skrairab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 23:38:19 by skrairab          #+#    #+#             */
-/*   Updated: 2022/02/24 18:07:00 by skrairab         ###   ########.fr       */
+/*   Updated: 2022/03/05 15:01:57 by skrairab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 int	ft_tolower(int c)
 {
-	if (c >= 'A' && c <= 'Z')
+	if (ft_isalpha(c))
 	{
-		c == c + 32;
+		if (c >= 'A' && c <= 'Z')
+			return (c + ('a' - 'A'));
 	}
-	return (0);
+	return (c);
 }
