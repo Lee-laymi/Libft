@@ -6,7 +6,7 @@
 #    By: skrairab <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/25 14:47:33 by skrairab          #+#    #+#              #
-#    Updated: 2022/03/06 11:52:22 by skrairab         ###   ########.fr        #
+#    Updated: 2022/03/10 19:51:25 by skrairab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,13 @@ SRCS = ft_isalpha.c \
        ft_strlcpy.c \
        ft_strlen.c \
        ft_atoi.c \
+       ft_strlcat.c\
+       ft_strchr.c\
+       ft_strncmp.c\
+       ft_strnstr.c\
+       ft_strrchr.c\
+       ft_memset.c\
+
 
        
 NAME = libft.a
