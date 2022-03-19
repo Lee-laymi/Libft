@@ -6,7 +6,7 @@
 /*   By: skrairab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 15:05:49 by skrairab          #+#    #+#             */
-/*   Updated: 2022/03/10 13:55:04 by skrairab         ###   ########.fr       */
+/*   Updated: 2022/03/19 12:29:16 by skrairab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@ int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;
-	int	value; //change type
+	unsigned long long	value;
 
 	i = 0;
+	while (str[i] && ft_isspace(str[i]))
+		i++;
 	sign = 1;
 	value = 0;
 	//add MIN - MAX (9223372036854775807)condition see Jinny code 
