@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skrairab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 10:21:22 by skrairab          #+#    #+#             */
-/*   Updated: 2022/03/19 21:41:15 by skrairab         ###   ########.fr       */
+/*   Created: 2022/03/19 16:45:35 by skrairab          #+#    #+#             */
+/*   Updated: 2022/03/19 17:02:50 by skrairab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	**ft_split(char const *s, char c)
 {
-	size_t			i;
-	unsigned char	*str1;
-	unsigned char	*str2;
+	if (!s)
+		return (NULL);
 
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
-	i = 0;
-	while (i < n)
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
-	return (0);
+
+
 }

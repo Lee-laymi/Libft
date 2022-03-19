@@ -6,15 +6,19 @@
 /*   By: skrairab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 00:41:47 by skrairab          #+#    #+#             */
-/*   Updated: 2022/03/08 00:44:53 by skrairab         ###   ########.fr       */
+/*   Updated: 2022/03/19 17:50:02 by skrairab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_ft(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if (s != NULL)
-		wirte(fd, s, ft_strlen(s));
-	return (0);
+	if (!s || fd < 0)
+		return (NULL);
+	while (*s)
+	{
+		write(fd, s, 1);
+		s++;
+	}
 }
