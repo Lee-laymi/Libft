@@ -6,11 +6,12 @@
 #    By: skrairab <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/25 14:47:33 by skrairab          #+#    #+#              #
-#    Updated: 2022/03/20 12:29:48 by skrairab         ###   ########.fr        #
+#    Updated: 2022/03/20 17:04:50 by skrairab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ft_bzero.c\
+SRCS = ft_atoi.c\
+       ft_bzero.c\
        ft_calloc.c\
        ft_isalnum.c\
        ft_isalpha.c \
