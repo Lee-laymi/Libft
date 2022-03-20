@@ -6,7 +6,7 @@
 /*   By: skrairab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 16:31:25 by skrairab          #+#    #+#             */
-/*   Updated: 2022/03/19 18:49:08 by skrairab         ###   ########.fr       */
+/*   Updated: 2022/03/20 13:50:58 by skrairab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
-//char	**ft_split(char const *s, char c);
+char	**ft_split(char const *s, char c);
 int		ft_atoi(const char *str);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_strchr(const char *s, int c);
@@ -47,6 +47,6 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	ft_bzero(void *s, size_t n);
-void	*calloc(size_t count, size_t size);
+void	*ft_calloc(size_t count, size_t size);
 
 #endif

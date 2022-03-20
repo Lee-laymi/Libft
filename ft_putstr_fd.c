@@ -6,7 +6,7 @@
 /*   By: skrairab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 00:41:47 by skrairab          #+#    #+#             */
-/*   Updated: 2022/03/19 17:50:02 by skrairab         ###   ########.fr       */
+/*   Updated: 2022/03/20 12:57:34 by skrairab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s || fd < 0)
-		return (NULL);
+		return ;
 	while (*s)
 	{
 		write(fd, s, 1);

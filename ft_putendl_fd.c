@@ -6,7 +6,7 @@
 /*   By: skrairab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 14:35:52 by skrairab          #+#    #+#             */
-/*   Updated: 2022/03/19 14:39:51 by skrairab         ###   ########.fr       */
+/*   Updated: 2022/03/20 12:58:14 by skrairab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	if (!s || fd < 0)
-		return (NULL);
+		return ;
 	while (*s)
 	{
 		write (fd, s, 1);
