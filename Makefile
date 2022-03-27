@@ -6,7 +6,7 @@
 #    By: skrairab <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/25 14:47:33 by skrairab          #+#    #+#              #
-#    Updated: 2022/03/20 17:04:50 by skrairab         ###   ########.fr        #
+#    Updated: 2022/03/27 16:44:50 by skrairab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,8 @@ SRCS = ft_atoi.c\
        ft_substr.c\
        ft_tolower.c\
        ft_toupper.c\
+       ft_striteri.c\
+       ft_strmapi.c\
 
 
        
