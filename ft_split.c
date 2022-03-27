@@ -6,70 +6,82 @@
 /*   By: skrairab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:45:35 by skrairab          #+#    #+#             */
-/*   Updated: 2022/03/20 18:44:51 by skrairab         ###   ########.fr       */
+/*   Updated: 2022/03/28 01:46:27 by skrairab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_wcount(const char *s, char c)
+int	w_count(char const *s, char c)
 {
-	int	count;
-
-	count = 0;
+	int		i;
+	
+	i = 0;
+	while ( *s == c)
+		s++;
 	while (*s)
 	{
-		while (*s == c)
-			--s;
-		if (*s != c && *s)
-			++s;
+		while (*s == c && *s)
+			s++;
+		if (*s != c)
+			i++;
+		while (*s != c && *s)
+		s++;
 	}
-	return (count);
+	return (i + 1);
 }
 
-static int	ft_wlen(const char *s, char c)
+int	str_count(char const *s, char c)
 {
-	int	len;
+	int		a;
 
-	len = 0;
-	while (s[len] && s[len] != c)
-		len++;
-	return (len);
+	a = 0;
+	while ( *s == c)
+		s++;
+	while (*s != '\0' && *s != c)
+	{
+		if (*s != c)
+			a++;
+		s++;
+	}
+	return (a);
 }
 
-static char	*ft_wword(const char *s, char c)
+char	*w_chr(char const *s, char c)
 {
-	char	*word;
+	char	*wchr;
+	int		l;
 
-	word = (char *)malloc(ft_wlen(s, c) + 1);
-	if (word == NULL)
+	l = str_count(s, c) + 1;
+	while ( *s == c)
+		s++;
+	wchr = (char *)malloc(sizeof(char) * (str_count(s, c) + 1));
+	if (!wchr)
 		return (NULL);
-	ft_strlcpy(word, s, ft_wlen(s, c) + 1);
-	return (word);
+	ft_strlcpy(wchr, s, l);
+	return (wchr);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**sp_word;
-	int		i;
+	char	**str;
+	int		k;
 	int		j;
+	int		m;
 
-	if (!s)
+	str = (char **)malloc(sizeof(char *) * (w_count(s, c) + 1));
+	j = w_count(s, c);
+	k = 0;
+	if (!str)
 		return (NULL);
-	sp_word = (char **)malloc((ft_wcount(s, c) + 1) * sizeof(char *));
-	if (sp_word == NULL)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (j < ft_wcount(s, c))
+	while (j > 0)
 	{
-		while (s[i] == c && s[i])
-			i++;
-		sp_word[j] = ft_wword(&s[i], c);
-		while (s[i] != c && s[i])
-			i++;
-		j++;
+		m = str_count(s, c) + 1;
+		str[k] = w_chr(s, c);
+		j--;
+		k++;
+		s = s + m;
 	}
-	sp_word[j] = 0;
-	return (sp_word);
+	str[k-1] = NULL;
+	return (str);
 }

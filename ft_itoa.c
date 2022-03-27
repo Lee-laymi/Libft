@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skrairab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/19 15:09:42 by skrairab          #+#    #+#             */
-/*   Updated: 2022/03/27 22:09:59 by skrairab         ###   ########.fr       */
+/*   Created: 2022/03/27 17:20:35 by skrairab          #+#    #+#             */
+/*   Updated: 2022/03/27 20:00:26 by skrairab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_itoa(int n)
 {
 	char	*str;
-	size_t	i;
-	size_t	j;
+	int	i;
+	int	sign;
 
-	if (!s)
-		return (NULL);
-	str = (char *)malloc(sizeof(*s) * (len + 1));
 	i = 0;
-	j = 0;
-	while (s[i])
-	{
-		if (i >= start && j < len)
-		{
-			str[j] = s[i];
-			j++;
-		}
-		i++;
-	}
-	str[j] = '\0';
-	return (str);
+	sign = 1;
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!n)
+		return (NULL);
+
+
+
+
 }
