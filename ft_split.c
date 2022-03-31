@@ -6,27 +6,28 @@
 /*   By: skrairab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:45:35 by skrairab          #+#    #+#             */
-/*   Updated: 2022/03/28 01:46:27 by skrairab         ###   ########.fr       */
+/*   Updated: 2022/04/01 01:07:23 by skrairab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 int	w_count(char const *s, char c)
 {
 	int		i;
-	
+
 	i = 0;
-	while ( *s == c)
+	while (*s == c)
 		s++;
 	while (*s)
 	{
 		while (*s == c && *s)
 			s++;
-		if (*s != c)
+		if (*s != c && *s)
 			i++;
 		while (*s != c && *s)
-		s++;
+			s++;
 	}
 	return (i + 1);
 }
@@ -36,12 +37,11 @@ int	str_count(char const *s, char c)
 	int		a;
 
 	a = 0;
-	while ( *s == c)
+	while (*s == c)
 		s++;
 	while (*s != '\0' && *s != c)
 	{
-		if (*s != c)
-			a++;
+		a++;
 		s++;
 	}
 	return (a);
@@ -53,7 +53,7 @@ char	*w_chr(char const *s, char c)
 	int		l;
 
 	l = str_count(s, c) + 1;
-	while ( *s == c)
+	while (*s == c)
 		s++;
 	wchr = (char *)malloc(sizeof(char) * (str_count(s, c) + 1));
 	if (!wchr)
@@ -74,14 +74,16 @@ char	**ft_split(char const *s, char c)
 	k = 0;
 	if (!str)
 		return (NULL);
-	while (j > 0)
+	while (j > 0 && *s)
 	{
 		m = str_count(s, c) + 1;
 		str[k] = w_chr(s, c);
+		while (*s == c && *s)
+			s++;
 		j--;
 		k++;
 		s = s + m;
 	}
-	str[k-1] = NULL;
+	str[k - 1] = NULL;
 	return (str);
 }
