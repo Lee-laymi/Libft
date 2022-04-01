@@ -6,7 +6,7 @@
 #    By: skrairab <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/25 14:47:33 by skrairab          #+#    #+#              #
-#    Updated: 2022/03/31 23:35:46 by skrairab         ###   ########.fr        #
+#    Updated: 2022/04/01 17:09:13 by skrairab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,9 +44,12 @@ SRCS = ft_atoi.c\
        ft_toupper.c\
        ft_striteri.c\
        ft_strmapi.c\
-
-
+       ft_lstnew.c\
        
+bonus: all
+
+SRCSbonus = ft_lstnew.c\
+
 NAME = libft.a
 
 OBJS = $(SRCS:.c=.o)
