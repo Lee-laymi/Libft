@@ -6,7 +6,7 @@
 #    By: skrairab <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/25 14:47:33 by skrairab          #+#    #+#              #
-#    Updated: 2022/04/01 17:09:13 by skrairab         ###   ########.fr        #
+#    Updated: 2022/04/06 23:57:32 by skrairab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,10 +45,30 @@ SRCS = ft_atoi.c\
        ft_striteri.c\
        ft_strmapi.c\
        ft_lstnew.c\
-       
-bonus: all
+       ft_lstadd_front.c\
+       ft_lstsize.c\
+       ft_lstlast.c\
+       ft_lstadd_back.c\
+       ft_lstclear.c\
+       ft_lstdelone.c\
+       ft_lstiter.c\
+       ft_lstmap.c\
+      
+BONUSC = ft_lstnew_bonus.c\
+	 ft_lstadd_front_bonus.c\
+	 ft_lstsize_bonus.c\
+	 ft_lstlast_bonus.c\
+	 ft_lstadd_back_bonus.c\
+	 ft_lstdelone_bonus.c\
+	 ft_lstclear_bonus.c\
+	 ft_lstiter_bonus.c\
+	 ft_lstmap_bonus.c\
 
-SRCSbonus = ft_lstnew.c\
+SRCS_BONUS = $(SRCS) $(BONUSC)
+OBJs_BONUS = $(SRCS_BONUS:.c=.o)
+
+bonus: $(OBJS_BONUS)
+	ar -rs $(NAME) $(OBJS_BONUS)
 
 NAME = libft.a
 

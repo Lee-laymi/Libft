@@ -6,12 +6,11 @@
 /*   By: skrairab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:45:35 by skrairab          #+#    #+#             */
-/*   Updated: 2022/04/01 01:07:23 by skrairab         ###   ########.fr       */
+/*   Updated: 2022/04/07 00:24:08 by skrairab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	w_count(char const *s, char c)
 {
