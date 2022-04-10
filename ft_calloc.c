@@ -6,7 +6,7 @@
 /*   By: skrairab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 10:32:12 by skrairab          #+#    #+#             */
-/*   Updated: 2022/03/20 13:51:53 by skrairab         ###   ########.fr       */
+/*   Updated: 2022/04/10 20:36:16 by skrairab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*pt;
+	char	*str;
 
-	pt = malloc(count * size);
-	if (!pt)
+	str = malloc(count * size);
+	if (!str)
 		return (NULL);
-	ft_bzero(pt, size * count);
-	return (pt);
+	ft_bzero (str, count * size);
+	return (str);
 }

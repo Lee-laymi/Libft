@@ -6,7 +6,7 @@
 #    By: skrairab <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/25 14:47:33 by skrairab          #+#    #+#              #
-#    Updated: 2022/04/06 23:57:32 by skrairab         ###   ########.fr        #
+#    Updated: 2022/04/07 22:30:24 by skrairab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,36 +43,26 @@ SRCS = ft_atoi.c\
        ft_tolower.c\
        ft_toupper.c\
        ft_striteri.c\
-       ft_strmapi.c\
-       ft_lstnew.c\
-       ft_lstadd_front.c\
-       ft_lstsize.c\
-       ft_lstlast.c\
-       ft_lstadd_back.c\
-       ft_lstclear.c\
-       ft_lstdelone.c\
-       ft_lstiter.c\
-       ft_lstmap.c\
+       ft_strmapi.c
       
-BONUSC = ft_lstnew_bonus.c\
-	 ft_lstadd_front_bonus.c\
-	 ft_lstsize_bonus.c\
-	 ft_lstlast_bonus.c\
-	 ft_lstadd_back_bonus.c\
-	 ft_lstdelone_bonus.c\
-	 ft_lstclear_bonus.c\
-	 ft_lstiter_bonus.c\
-	 ft_lstmap_bonus.c\
+BONUSC = ft_lstnew.c\
+	 ft_lstadd_front.c\
+	 ft_lstsize.c\
+	 ft_lstlast.c\
+	 ft_lstadd_back.c\
+	 ft_lstdelone.c\
+	 ft_lstclear.c\
+	 ft_lstiter.c\
+	 ft_lstmap.c
 
-SRCS_BONUS = $(SRCS) $(BONUSC)
-OBJs_BONUS = $(SRCS_BONUS:.c=.o)
+SRCS_BONUS = $(SRCS)\
+	     $(BONUSC)
 
-bonus: $(OBJS_BONUS)
-	ar -rs $(NAME) $(OBJS_BONUS)
-
-NAME = libft.a
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 OBJS = $(SRCS:.c=.o)
+
+NAME = libft.a
 
 CC = gcc
 
@@ -81,13 +71,16 @@ CC_FLAGS = -c -Wall -Wextra -Werror
 %.o: %.c
 	$(CC) $(CC_FLAGS) -c $< -o $@
 
-$(NAME) : $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+$(NAME): $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
 
 all: $(NAME)
 
+bonus: $(OBJS_BONUS)
+	ar -rcs $(NAME) $(OBJS_BONUS)
+
 clean: 
-	-rm -f $(OBJS)
+	rm -f $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
 	rm -f $(NAME)
@@ -95,5 +88,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-
-all:

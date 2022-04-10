@@ -6,18 +6,18 @@
 /*   By: skrairab <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 16:45:35 by skrairab          #+#    #+#             */
-/*   Updated: 2022/04/07 00:24:08 by skrairab         ###   ########.fr       */
+/*   Updated: 2022/04/09 23:29:14 by skrairab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	w_count(char const *s, char c)
+static int	w_count(char const *s, char c)
 {
 	int		i;
 
 	i = 0;
-	while (*s == c)
+	while (*s && *s == c)
 		s++;
 	while (*s)
 	{
@@ -28,17 +28,17 @@ int	w_count(char const *s, char c)
 		while (*s != c && *s)
 			s++;
 	}
-	return (i + 1);
+	return (i);
 }
 
-int	str_count(char const *s, char c)
+static int	str_count(char const *s, char c)
 {
 	int		a;
 
 	a = 0;
-	while (*s == c)
+	while (*s && *s == c)
 		s++;
-	while (*s != '\0' && *s != c)
+	while (*s && *s != c)
 	{
 		a++;
 		s++;
@@ -46,16 +46,16 @@ int	str_count(char const *s, char c)
 	return (a);
 }
 
-char	*w_chr(char const *s, char c)
+static char	*w_chr(char const *s, char c)
 {
 	char	*wchr;
 	int		l;
 
 	l = str_count(s, c) + 1;
-	while (*s == c)
+	while (*s && *s == c)
 		s++;
-	wchr = (char *)malloc(sizeof(char) * (str_count(s, c) + 1));
-	if (!wchr)
+	wchr = (char *)malloc(sizeof(char) * l);
+	if (wchr == NULL)
 		return (NULL);
 	ft_strlcpy(wchr, s, l);
 	return (wchr);
@@ -66,23 +66,21 @@ char	**ft_split(char const *s, char c)
 	char	**str;
 	int		k;
 	int		j;
-	int		m;
 
-	str = (char **)malloc(sizeof(char *) * (w_count(s, c) + 1));
 	j = w_count(s, c);
+	str = (char **)malloc(sizeof(char *) * (j + 1));
 	k = 0;
-	if (!str)
+	if (str == NULL)
 		return (NULL);
-	while (j > 0 && *s)
+	while (j > k && *s)
 	{
-		m = str_count(s, c) + 1;
 		str[k] = w_chr(s, c);
 		while (*s == c && *s)
 			s++;
-		j--;
+		while (*s != c && *s)
+			s++;
 		k++;
-		s = s + m;
 	}
-	str[k - 1] = NULL;
+	str[k] = NULL;
 	return (str);
 }
